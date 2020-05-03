@@ -10,23 +10,23 @@ LcdBarGraph lbg(&lcd, 16, 0, 1);
 #define TRIGGER_PIN  9
 #define ECHO_PIN     10
 #define MAX_DISTANCE 30
- 
+
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
- 
+
 void setup() {
- Serial.begin(115200);
+ //Serial.begin(115200);
   lcd.begin(16,2);
   pinMode(8,INPUT);
 
 }
- 
+
 void loop() {
   if(digitalRead(8) == HIGH){
  /* Serial.print("Ping: ");
   Serial.print(sonar.ping_cm());
   Serial.println("cm");
 */
-  lcd.setCursor(1,0); 
+  lcd.setCursor(1,0);
   lcd.print("Distance: ");
   lcd.print(sonar.ping_cm());
   lcd.print(" cm");
