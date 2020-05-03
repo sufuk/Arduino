@@ -26,11 +26,11 @@ void loop() {
   Serial.print(sonar.ping_cm());
   Serial.println("cm");
 */
-  lcd.setCursor(1,0);
+  lcd.setCursor(0, 0);
   lcd.print("Distance: ");
   lcd.print(sonar.ping_cm());
   lcd.print(" cm");
-  lcd.setCursor(1,1);
+  lcd.setCursor(0, 1);
   lbg.drawValue(sonar.ping_cm(), MAX_DISTANCE);
   delay(500);
 }
